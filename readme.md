@@ -2,7 +2,7 @@
 
 ## 商用前端開發
 
-### 授課目標
+## 授課目標
 - HTML
 - CSS
 - JavaScript
