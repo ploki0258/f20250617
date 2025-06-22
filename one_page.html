@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, 
+        body {
+            scroll-behavior: smooth;
+        }
+
+        .header {
+            position: fixed;
+            width: 100%;
+            height: 95px;
+            left: 0;
+            top: 0;
+            background-color: #ffffff;
+            color: #a99e9e;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            padding-right: 10px;
+        }
+
+        .menu {
+            color: #353535;
+        }
+
+        .page {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #953a3a;
+            color: #fff;
+        }
+
+        .page:nth-child(even) {
+            background-color: #0333e0;
+        }
+
+        .menu-list {
+            list-style-type: none;
+        }
+
+        .menu-list li {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="images/favicon/android-icon-192x192.png" style="max-width: 100px" alt="logo" />
+        </div>
+        <div class="menu">
+            <ul class="menu-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#product">Product</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="page" id="home">
+        <h2>Home</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    </div>
+    <div class="page" id="about">
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    </div>
+    <div class="page" id="contact">
+        <h2>Contact</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    </div>
+    <div class="page" id="product">
+        <h2>Product</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    </div>
+</body>
+</html>
