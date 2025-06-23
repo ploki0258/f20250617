@@ -70,10 +70,11 @@
 
             .box2 {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
                 gap: 10px;
                 background-color: #fb7878;
                 padding: 10px;
+                margin-top: 30px;
             }
 
             .box2 > div {
@@ -89,10 +90,46 @@
                 min-width: 50px;
             }
 
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 30px 10px;
+            }
+
+            table th, 
+            table td {
+                padding: 10px;
+                border: 1px solid #3c3c3c;
+                text-align: center;
+            }
+
+            table th {
+                background-color: #3c3c3c;
+                color: #fff;
+            }
+
         </style>
     </head>
     <body>
         <h1>Hello World</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>90</td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="profile">
             <div class="box">
@@ -101,21 +138,12 @@
             </div>
             <div class="block">3</div>
             <div class="block">4</div>
-        </div>
-        <hr/>
-        <div>
-            <div class="block">
-                1
-            </div>
-            <div class="box">
-                <div>2</div>
-                <div>3</div>
-            </div>
             <div class="box2">
-                <div>4</div>
                 <div>5</div>
                 <div>6</div>
+                <div>7</div>
             </div>
         </div>
+        <hr/>
     </body>
 </html>
