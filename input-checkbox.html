@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Checkbox</title>
+</head>
+<body>
+    <h1>多選 Checkbox</h1>
+    <form action="https://book.niceinfos.com/api/form/index.php">
+        <div>
+            <label for="interest">興趣</label>
+        </div>
+        <span>
+            <input type="checkbox" name="interest[]" id="reading" value="reading" />
+            <label for="reading">閱讀</label>
+        </span>
+        <span>
+            <input type="checkbox" name="interest[]" id="sports" value="sports" />
+            <label for="sports">運動</label>
+        </span>
+        <span>
+            <input type="checkbox" name="interest[]" id="music" value="music" />
+            <label for="music">音樂</label>
+        </span>
+        <span>
+            <input type="checkbox" name="interest[]" id="travel" value="travel" />
+            <label for="travel">旅遊</label>
+        </span>
+        <span>
+            <input type="checkbox" name="interest[]" id="coding" value="coding" />
+            <label for="coding">寫程式</label>
+        </span>
+        <div>
+            <input type="submit" value="送出"/>
+        </div>
+    </form>
+</body>
+</html>

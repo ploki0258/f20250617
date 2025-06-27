@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+<body>
+    <h2>單選</h2>
+    <form action="https://book.niceinfos.com/api/form/index.php">
+        <select name="city" id="city">
+            <option value="">請選擇</option>
+            <option value="taipei">台北</option>
+            <option value="taichung">台中</option>
+            <option value="kaohsiung">高雄</option>
+            <option value="tainan">台南</option>
+            <option value="hualien">花蓮</option>
+            <option value="keelung">基隆</option>
+            <option value="chiayi">嘉義</option>
+            <option value="pingtung">屏東</option>
+            <option value="yilan">宜蘭</option>
+            <option value="taoyuan">桃園</option>
+            <option value="hsinchu">新竹</option>
+        </select>
+        <input type="submit" value="送出" />
+    </form>
+
+    <h2>多選</h2>
+    <!-- select須加上multiple 並搭配Ctrl鍵複選 -->
+    <form action="https://book.niceinfos.com/api/form/index.php">
+        <select name="city[]" id="city-multiple" multiple>
+            <option value="">請選擇</option>
+            <option value="taipei" selected>台北</option>
+            <option value="keelung">新北</option>
+            <option value="taoyuan">桃園</option>
+            <option value="taichung">台中</option>
+            <option value="tainan">台南</option>
+            <option value="kaohsiung">高雄</option>
+            <option value="hsinchu">新竹</option>
+            <option value="yilan">宜蘭</option>
+            <option value="hualien">花蓮</option>
+            <option value="chiayi">嘉義</option>
+            <option value="pingtung">屏東</option>
+        </select>
+        <input type="submit" value="送出" />
+    </form>
+</body>
+</html>
