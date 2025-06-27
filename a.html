@@ -23,58 +23,17 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-
-            th, td {
-                padding: 10px;
-                border: 1px solid #3c3c3c;
-                text-align: center;
-            }
-
-            th {
-                background-color: #3c3c3c;
-                color: white;
-            }
-        </style>
     </head>
     <body>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>100</td>
-                </tr>
-                <tr>
-                    <td>Jane</td>
-                    <td>90</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <!-- 不合理的表格 缺少 thead 與 tbody -->
-        <!-- <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Score</th>
-                </tr>
-                <tr>
-                    <td>John</td>
-                    <td>100</td>
-                </tr>
-                <tr>
-                    <td>Jane</td>
-                    <td>90</td>
-                </tr>
-        </table> -->
+        <div>
+            <!-- _self 在目前的頁面開啟連結 -->
+            <!-- 流程有前後(因果)關係 -->
+            <a href="https://www.google.com" target="_self">Google self</a>
+        </div>
+        <div>
+            <!-- _blank 在新視窗開啟連結 -->
+            <!-- 流程無因果關係 -->
+            <a href="https://www.google.com" target="_blank">Google blank</a>
+        </div>
     </body>
 </html>

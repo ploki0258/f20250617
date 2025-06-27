@@ -79,17 +79,6 @@
             background-color: #1e3dad;
         }
 
-        .to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #3c3c3c;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        
         .logo {
             width: 80px;
             height: 80px;
@@ -100,7 +89,18 @@
             height: auto;
         }
 
-        /* .menu-list {
+        .to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3c3c3c;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .menu-list {
             list-style-type: none;
         }
 
@@ -111,7 +111,8 @@
         .menu-list li:hover {
             color: #ffffff;
             background-color: rgb(163, 159, 159);
-        } */
+        }
+
     </style>
 </head>
 <body>
@@ -123,11 +124,13 @@
             <img src="images/favicon/android-icon-192x192.png" alt="logo" />
         </div>
         <div class="menu">
+            <ul class="menu-list">
                 <!-- a標籤除了可連結外部網站，還有錨點連結 使用#(對應id) -->
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#product">Product</a>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#product">Product</a></li>
+            </ul>
         </div>
     </div>
     <div class="page" id="home">

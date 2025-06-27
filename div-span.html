@@ -24,57 +24,84 @@
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <style>
-            table {
+            .profile {
                 width: 100%;
-                border-collapse: collapse;
-            }
-
-            th, td {
+                min-height: 300px;
                 padding: 10px;
-                border: 1px solid #3c3c3c;
-                text-align: center;
+                border: 1px solid #000;
+                border-radius: 10px;
             }
 
-            th {
-                background-color: #3c3c3c;
-                color: white;
+            .box {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                background-color: #fb7878;
+                padding: 10px;
+            }
+
+            .box > div {
+                padding: 10px;
+                background-color: #2b9ade;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 300px;
+            }
+
+            .block {
+                padding: 10px;
+                background-color: #2b9ade;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 200px;
+                margin-top: 10px;
+            }
+
+            .first-name {
+                font-size: 40px;
+            }
+
+            .item {
+                background-color: #fb7878;
+            }
+
+            .mark {
+                font-size: 40px;
             }
         </style>
     </head>
     <body>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>100</td>
-                </tr>
-                <tr>
-                    <td>Jane</td>
-                    <td>90</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- display: block -->
+        <!-- div 劃分區塊位置 -->
+        <div>
+            區塊標籤1
+        </div>
+        <div>
+            區塊標籤2
+        </div>
         
-        <!-- 不合理的表格 缺少 thead 與 tbody -->
-        <!-- <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Score</th>
-                </tr>
-                <tr>
-                    <td>John</td>
-                    <td>100</td>
-                </tr>
-                <tr>
-                    <td>Jane</td>
-                    <td>90</td>
-                </tr>
-        </table> -->
+        <!-- display: inline -->
+        <!-- span 針對個別內容進行修飾 -->
+        <span class="item">
+            行內標籤1
+        </span>
+        <span class="item">
+            行內標籤2
+        </span>
+
+        <div class="profile">
+            <div class="box">
+                <div><span class="first-name">我</span>的名子</div>
+                <div>2</div>
+            </div>
+            <div class="block">3</div>
+            <div class="block">4</div>
+        </div>
+
+        <h6>Hello World h6 <span class="mark">大文字</span></h6>
     </body>
 </html>
