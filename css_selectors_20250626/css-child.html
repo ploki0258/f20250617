@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 子代選擇器</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 只有在父集底下的第一層有符合條件才會適用 */
+        /* 子代選擇器 比 後代選擇器 更嚴謹 */
+        .parent > .child {
+            color: red;
+            background-color: yellow;
+        }
+        
+        .parent > .other {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+            <div class="child">child</div>
+            <div class="other">other</div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div class="child">child more</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
