@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 偽類選擇器 Checked </title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 隱藏原本的 radio */
+        .state {
+            display: none;
+        }
+
+        .radio-state label {
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        
+        .radio-state span:hover {
+            background-color: rgb(95, 170, 150);
+        }
+
+        /* yes 一開始先隱藏 */
+        .radio-state .yes {
+            display: none;
+        }
+
+        /* 被確認時，yes 顯示 */
+        .state:checked + .radio-state .yes {
+            display: inline-block;
+        }
+
+        /* 被確認時，no 隱藏 */
+        .state:checked + .radio-state .no {
+            display: none;
+        }
+
+        .radio-state span {
+            background-color: aquamarine;
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            margin-left: 5px;
+            text-align: center;
+            padding: 2px 5px;
+            font-weight: bold;
+        }
+        
+        .state:checked + .radio-state span {
+            background-color: rgb(0, 255, 76);
+            color: rgb(40, 12, 255);
+        }
+
+        .anger, .bad, .ok, .happy, .excited {
+            display: none;
+        }
+
+        .state:checked + .radio-state .anger, 
+        .state:checked + .radio-state .bad, 
+        .state:checked + .radio-state .ok, 
+        .state:checked + .radio-state .happy, 
+        .state:checked + .radio-state .excited {
+            display: inline-block;
+        }
+        
+        .general-radio, .icon-radio {
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="general-radio">
+            <h2>一般單選</h2>
+            <input type="radio" class="state" id="radio-toggle-1" name="num">
+            <div class="radio-state">
+                <label for="radio-toggle-1">
+                    <img src="radio_button_unchecked.svg" class="no">
+                    <img src="radio_button_checked.svg" class="yes">
+                    <span>one</span>
+                </label>
+            </div>
+            <input type="radio" class="state" id="radio-toggle-2" name="num">
+            <div class="radio-state">
+                <label for="radio-toggle-2">
+                    <img src="radio_button_unchecked.svg" class="no">
+                    <img src="radio_button_checked.svg" class="yes">
+                    <span>two</span>
+                </label>
+            </div>
+            <input type="radio" class="state" id="radio-toggle-3" name="num">
+            <div class="radio-state">
+                <label for="radio-toggle-3">
+                    <img src="radio_button_unchecked.svg" class="no">
+                    <img src="radio_button_checked.svg" class="yes">
+                    <span>three</span>
+                </label>
+            </div>
+        </div>
+        <hr>
+        <div class="icon-radio">
+            <h2>圖示單選</h2>
+        <input type="radio" class="state" id="radio-mood-1" name="satisfaction">
+        <div class="radio-state">
+            <label for="radio-mood-1">
+                <img src="radio_button_unchecked.svg" class="no">
+                <img src="images/sentiment_extremely_dissatisfied.svg" class="anger">
+                <span>非常不滿意</span>
+            </label>
+        </div>
+        <input type="radio" class="state" id="radio-mood-2" name="satisfaction">
+        <div class="radio-state">
+            <label for="radio-mood-2">
+                <img src="radio_button_unchecked.svg" class="no">
+                <img src="images/mood_bad.svg" class="bad">            
+                <span>不滿意</span>
+            </label>
+        </div>
+        <input type="radio" class="state" id="radio-mood-3" name="satisfaction">
+        <div class="radio-state">
+            <label for="radio-mood-3">
+                <img src="radio_button_unchecked.svg" class="no">
+                <img src="images/sentiment_neutral.svg" class="ok">
+                <span>還行</span>
+            </label>
+        </div>
+        <input type="radio" class="state" id="radio-mood-4" name="satisfaction">
+        <div class="radio-state">
+            <label for="radio-mood-4">
+                <img src="radio_button_unchecked.svg" class="no">
+                <img src="images/sentiment_satisfied.svg" class="happy">
+                <span>滿意</span>
+            </label>
+        </div>
+        <input type="radio" class="state" id="radio-mood-5" name="satisfaction">
+        <div class="radio-state">
+            <label for="radio-mood-5">
+                <img src="radio_button_unchecked.svg" class="no">
+                <img src="images/sentiment_very_satisfied.svg" class="excited">
+                <span>非常滿意</span>
+            </label>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
