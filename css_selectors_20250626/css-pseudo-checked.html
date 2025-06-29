@@ -6,22 +6,27 @@
     <title>CSS 偽類選擇器: checked</title>
     <link rel="stylesheet" href="reset.css">
     <style>
+        /* 一開始隱藏 input */
         .state {
             display: none;
         }
 
+        /* 讓label可以被點擊(顯示手圖示) */
         .checkbox-state label {
             cursor: pointer;
         }
 
+        /* 一開始先隱藏 yes */
         .checkbox-state .yes {
             display: none;
         }
 
+        /* 當 input 被選取時，顯示 yes */
         .state:checked + .checkbox-state .yes {
             display: inline-block;
         }
 
+        /* 當 input 被選取時，隱藏 no */
         .state:checked + .checkbox-state .no {
             display: none;
         }
@@ -32,8 +37,8 @@
         <input type="checkbox" class="state" id="checkbox-toggle"/>
         <div class="checkbox-state">
             <label for="checkbox-toggle">
-                <img src="checkbox.svg" alt="image" class="no"/>
-                <img src="checkbox-checked.svg" alt="image" class="yes"/>
+                <img src="images/checkbox.svg" alt="image" class="no"/>
+                <img src="images/checkbox-checked.svg" alt="image" class="yes"/>
                 <span class="no">未選取</span>
                 <span class="yes">已選取</span>
             </label>
