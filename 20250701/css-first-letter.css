@@ -1,0 +1,5 @@
+.first-letter::first-letter {
+    font-size: 40px;
+    font-weight: 700;
+    color: #3659e9;
+}
