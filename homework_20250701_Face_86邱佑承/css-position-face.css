@@ -1,0 +1,107 @@
+/* 臉 */
+.face {
+    /* 樣式 */
+    background-color: rgb(255, 166, 0);
+    border: 3px solid rgb(224, 128, 43);
+    border-radius: 10px;
+    /* 長寬 */
+    width: 500px;
+    height: 500px;
+    /* 相對位置 */
+    position: relative;
+    /* 位移 */
+    left: 700px;
+    top: 150px;
+    display: flex;
+    flex-direction: row;
+    /* 主軸 */
+    justify-content: center;
+    /* 次軸 */
+    align-items: center;
+}
+
+/* 鼻子 */
+.nose {
+    background-color: rgb(224, 79, 224);
+    border: 5px solid rgb(161, 33, 212);
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    /* position: absolute;
+    left: 200px;
+    top: 200px; */
+}
+
+.eyes {
+    /* background-color: aliceblue; */
+    /* opacity: 0; */
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    top: 15%;
+    display: flex;
+    /* 主軸 */
+    justify-content: space-around;
+    /* 次軸 */
+    align-items: center;
+    /* align-content: space-around; */
+}
+
+/* 眼睛 */
+.eye-left, .eye-right {
+    background-color: rgb(255, 255, 255);
+    border: 5px solid #919191;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    /* flex: 1; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 眼珠 */
+.eye-left > div, .eye-right > div {
+    background-color: rgb(0, 0, 0);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.mouth {
+    /* background-color: brown; */
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 嘴巴 */
+.mouth-1 {
+    background-color: rgb(255, 255, 255);
+    border: 5px solid #888888;
+    border-radius: 10px;
+    width: 250px;
+    height: 80px;
+    /* position: absolute; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: self-start;
+    /* align-content: center; */
+}
+
+/* 牙齒*2 */
+.teeth {
+    background-color: rgb(71, 196, 108);
+    border: 5px solid rgb(2, 146, 2);
+    border-radius: 5px;
+    width: 40px;
+    height: 55px;
+    /* position: relative; */
+    /* top: -100; */
+    display: inline-block;
+}
