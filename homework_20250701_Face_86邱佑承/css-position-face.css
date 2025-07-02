@@ -10,8 +10,8 @@
     /* 相對位置 */
     position: relative;
     /* 位移 */
-    left: 700px;
-    top: 150px;
+    left: 35%;
+    top: 10%;
     display: flex;
     flex-direction: row;
     /* 主軸 */
