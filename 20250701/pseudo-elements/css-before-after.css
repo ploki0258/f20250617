@@ -17,6 +17,14 @@
     border-radius: 20px;
 }
 
+.menu {
+    list-style-type: none;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .menu li {
     display: flex;
     align-items: center;
@@ -24,8 +32,14 @@
 }
 
 .menu li::before {
-    content: '\e87d';
-    font-family: 'Material Icons';
-    color: #ff2a2a;
+    content: '\e838';
+    font-family: 'Material Symbols Outlined';
+    color: #ffe625;
     font-size: 20px;
+}
+
+.menu a:hover {
+    color: #3659e9;
+    background-color: antiquewhite;
+    padding: 5px;
 }

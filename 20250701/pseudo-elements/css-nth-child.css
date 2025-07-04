@@ -10,7 +10,7 @@
 }
 
 .table th {
-    background-color: #3659e9;
+    background-color: #617ce5;
     color: #fff;
 }
 
@@ -30,6 +30,12 @@
 
 .table tbody tr:last-child {
     color: #8d0606;
+    font-weight: bold;
+    text-shadow: 
+    1px 1px 0 rgb(44, 44, 44),
+    -1px 1px 0 rgb(44, 44, 44),
+    1px -1px 0 rgb(44, 44, 44),
+    -1px -1px 0 rgb(44, 44, 44);
 }
 
 /* 可取代 first-child */
@@ -43,9 +49,6 @@
 }
 
 /* 使用 nth-child(n) 將數字的部分全部靠右對齊 */
-.table tbody tr td:nth-child(2),
-.table tbody tr td:nth-child(3),
-.table tbody tr td:nth-child(4),
-.table tbody tr td:nth-child(5) {
+.table tbody tr td:nth-child(n + 2) {
     text-align: right;
 }

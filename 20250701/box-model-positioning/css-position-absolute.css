@@ -1,0 +1,43 @@
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: #3659e9;
+    color: #e9e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 絕對位置 */
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+.wrap {
+    background: rgb(255, 206, 107);
+    /* 相對位置 */
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.wrap-1 {
+    background: rgb(159, 110, 13);
+    /* 相對位置 */
+    position: relative;
+    width: 600px;
+    height: 400px;
+}
+
+.box-1 {
+    width: 200px;
+    height: 200px;
+    background-color: #111c49;
+    color: #e9e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 絕對位置 */
+    position: absolute;
+    left: 200px;
+    top: 100px;
+}

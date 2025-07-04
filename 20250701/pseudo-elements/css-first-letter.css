@@ -1,3 +1,9 @@
+.first-letter {
+    background-color: tomato;
+    color: aliceblue;
+    padding: 0 20px;
+}
+
 .first-letter::first-letter {
     font-size: 40px;
     font-weight: 700;
