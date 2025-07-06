@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <style>
+        body {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            height: 100vh;
+            background-color: hsl(var(--background));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .tabs {
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 0.5rem;
+            display: flex;
+            background-color: #fff;
+            border-radius: 1000px;
+            box-shadow: 0 0 1px 0 rgb(24, 94, 224, 0.15);
+            list-style: none;
+            position: relative;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .tab {
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sliding Tabs - Pure CSS</h1>
+        <div class="tabs">
+            <div class="tab">
+                <input type="radio" name="Sliding" id="html">
+            <label for="html">HTML</label>
+            </div>
+            <div class="tab">
+                <input type="radio" name="Sliding" id="CSS">
+                <label for="CSS">CSS</label>
+            </div>
+            <div class="tab">
+                <input type="radio" name="Sliding" id="js">
+                <label for="js">JavaScript</label>
+            </div>
+            <div class="tab">
+                <input type="radio" name="Sliding" id="react">
+                <label for="react">React</label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
