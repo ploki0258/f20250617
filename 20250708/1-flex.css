@@ -1,0 +1,12 @@
+.d-flex {
+    display: flex;
+    justify-content: flex-start;
+    justify-content: center;
+    justify-content: flex-end;
+    /* justify-content: space-between; */
+    /* spaxe-between + padding 可替代 space-around */
+    /* justify-content: space-around;  */
+    justify-content: space-evenly;
+    /* padding: 10px; */
+    border: 1px solid #000;
+}
