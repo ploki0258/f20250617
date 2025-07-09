@@ -1,0 +1,29 @@
+.first {
+    /* 顏色樣式：
+    RGB: rgb(1, 1, 1)
+    RGBA: rgba(0, 0, 0, 1)
+    16進制: #ffffff
+    顏色名稱: red */
+    /* color: rgba(0, 0, 0, 0.807); */
+    color: rgb(0, 0, 0);
+    color: #0b0b0b;
+    color: black;
+    color: #ff000095;
+}
+
+.article {
+    width: 600px;
+    margin: 0 auto;
+    text-align: justify;
+    text-indent: 40px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.article h1 {
+    font-size: 44px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}

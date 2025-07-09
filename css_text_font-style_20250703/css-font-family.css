@@ -1,0 +1,69 @@
+.article {
+    width: 500px;
+    margin: 0 auto;
+    text-align: justify;
+    text-indent: 40px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.article h1 {
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.delete {
+    /* 刪除線 */
+    text-decoration: line-through;
+}
+
+.menu {
+    display: flex;
+    margin: 20 0;
+    width: 100%;
+    height: 50px;
+    background: #105a96;
+    color: #ffffff;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    /* text-transform: uppercase; */
+    /* text-transform: capitalize; */
+    text-transform: lowercase;
+}
+
+.code-form {
+    padding: 20px;
+    border: 1px solid #dedede;
+}
+
+.code-form input {
+    padding: 10px;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    /* 顯示大寫 (僅有顯示改變 真實值不變) */
+    text-transform: uppercase;
+}
+
+.button {
+    text-align: right;
+}
+
+.button button {
+    color: #ffffff;
+    background: #2b93e9;
+    border: 1px solid #dedede;
+    /* border: none; */
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    letter-spacing: 10px;
+}
