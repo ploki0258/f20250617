@@ -6,7 +6,6 @@ body {
     background: #0d9488;
     color: #fff;
     height: 60px;
-    /* position: fixed; */
 }
 
 .header .wrap {
@@ -34,6 +33,7 @@ body {
 .cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: 15px;
 }
 
@@ -46,26 +46,27 @@ body {
 .cards .img {
     height: 150px;
     background: #dedede;
+    color: #909090;
     border-radius: 10px 10px 0 0;
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: #909090;
+    align-items: center;
 }
 
 .cards .wrap {
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
     justify-content: space-between;
+    gap: 20px;
+    /* .wrap高度 = 100% - 上面.img的高度 以對齊 */
     height: calc(100% - 150px);
 }
 
 .cards .wrap .title {
     font-size: 20px;
     font-weight: 800;
-    color: #0a4ba5;
+    color: #064d73;
 }
 
 .cards .wrap .desc {
@@ -75,13 +76,14 @@ body {
 
 .cards .wrap .btn {
     padding: 10px 20px;
-    background: #0a4ba5;
+    background: #5992e2;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
 }
 
-.card .wrap .btn:hover {
-    background: #1b65cc;
+.cards .wrap .btn:hover {
+    background: #0968ee;
+    box-shadow: 3px 3px 5px 0px #000;
 }

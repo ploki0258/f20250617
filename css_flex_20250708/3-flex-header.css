@@ -1,7 +1,8 @@
 .header {
     position: fixed;
     width: 100%;
-    background: #df5b5b;
+    height: 60px;
+    background: #0c0092;
     color: #fff;
     top: 0;
     left: 0;
@@ -31,4 +32,9 @@
 
 .page {
     height: 200vh;
+    background: #dddcdc;
+}
+
+.page .container {
+    top: 60px;
 }
