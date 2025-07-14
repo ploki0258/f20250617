@@ -1,0 +1,222 @@
+/* 頁首 */
+.header {
+    height: 100vh;
+    background: linear-gradient(to right, #5f37bd, #8b08e2);
+    color: #fff;
+}
+
+/* 置頂header */
+.header .d-flex .wrap {
+    /* height: 60px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 10px;
+}
+
+.header .logo h1 {
+    font-size: 20px;
+    font-weight: 1000;
+    cursor: pointer;
+}
+
+.header .menu {
+    display: flex;
+    gap: 5px;
+}
+
+.header .menu li {
+    padding: 5px 15px;
+    font-weight: 800;
+}
+
+.header .menu li:hover {
+    background-color: #fff;
+    border-radius: 10px;
+    color: #1f2937;
+}
+
+/* .header .menu .btn-1 {
+    background-color: #facc15;
+    border-radius: 10px;
+    color: #1f2937;
+    font-weight: 800;
+} */
+
+.btn-1 {
+    background-color: #facc15;
+    border-radius: 10px;
+    color: #1f2937;
+    font-weight: 800;
+}
+
+.header .menu li:last-child:hover {
+    background-color: #f7d83e;
+}
+
+/* 中間主要內容 */
+.header .center.contect .d-flex {
+    height: calc(100vh - 10px - 45px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header .center.contect .wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .center.contect h2 {
+    font-size: 70px;
+    font-weight: 800;
+}
+
+.header .center.contect .wrap .p {
+    color: azure;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Buttons */
+.header .center.contect .wrap-btn {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.center.contect .wrap-btn .btn {
+    padding: 10px 20px;
+    font-size: x-large;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    background: none;
+    color: #dedede;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.center.contect .wrap-btn .btn.btn-1 {
+    background-color: #facc15;
+    border-radius: 10px;
+    border: none;
+    color: #1f2937;
+    font-weight: 800;
+}
+
+.center.contect .wrap-btn .btn:hover {
+    background: #fff;
+    color: #1f2937;
+}
+
+.center.contect .wrap-btn .btn.btn-1:hover {
+    background-color: #c4a117;
+}
+
+/* 內容 */
+.main .container {
+    height: 300px;
+}
+
+.main .wrap {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.main .wrap h3 {
+    font-size: 30px;
+    font-weight: 900;
+    color: #1f2937;
+}
+
+.main .wrap .d-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.main .d-grid .item {
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px 0px #000;
+    padding: 15px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.main .d-grid .item span {
+    font-size: 24px;
+    font-weight: 800;
+    color: #5f37bd;
+    /* margin-bottom: 10px; */
+}
+
+.main .d-grid .item p {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 頁尾 */
+.footer {
+    height: 80px;
+    background-color: #1f2937;
+    color: #fff;
+}
+
+.footer .wrap {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* RWD */
+@media screen and (max-width: 768px) {
+    .header .d-flex .wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header .d-flex .wrap .menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .header .center.contect .wrap-btn {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .main .container {
+        height: 600px;
+    }
+
+    .main .wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    .main .wrap .d-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
