@@ -1,0 +1,195 @@
+html,
+body {
+    font-size: 18px;
+}
+
+.header {
+    /* background: #000; */
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 9;
+}
+
+.header .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .menu ul {
+    display: flex;
+    gap: 20px;
+}
+
+.header .menu li a {
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.header .menu li.active a {
+    background: #ffd723;
+    color: #1e1e1e;
+}
+
+.header .menu li:hover a {
+    background: #fff;
+    color: #1e1e1e;
+}
+
+.header .menu li.active:hover a {
+    background: #b4950f;
+}
+
+.footer {
+    background: #1f2937;
+    color: #fff;
+}
+
+.footer .copyright {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.main {
+    height: 100vh;
+    background: linear-gradient(to right, #667eea, #764ba2);
+}
+
+.main .main-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0000004e;
+    z-index: 1;
+}
+
+.main .main-content {
+    position: relative;
+    height: 100%;
+    z-index: 2;
+}
+
+.main .wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #fff;
+}
+
+.main .title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.main .content {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.main .btn-group {
+    display: flex;
+    gap: 20px;
+}
+
+/* 定義外型 */
+.main .btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.5s ease, background 0.5s ease, border-color 0.5s ease;
+    background: #dedede;
+    color: #1c1c1c;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.main .btn:hover {
+    background: #b4b4b4;
+}
+
+.main .btn.outline {
+    background: transparent;
+    border: 2px solid #dedede;
+    color: #fff;
+}
+
+.main .btn.outline:hover {
+    border-color: transparent;
+    background: #fff;
+    color: #1e1e1e;
+}
+
+/* 定義主要狀態 */
+.main .btn.primary {
+    background: #f7d707;
+    color: #484848;
+}
+
+.main .btn.primary:hover {
+    background: #c0b108;
+}
+
+.main .btn.danger {
+    background: #ff401f;
+    color: #fff;
+}
+
+.main .btn.danger:hover {
+    background: #d43518;
+}
+
+.about {
+    padding: 80px 0;
+}
+
+.about .wrap .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.about .row .col {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 3px 3px rgb(28 28 28 / 19%);
+}
+
+.about .title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.about .subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #4f46e5;
+}
+
+.about .content {
+    text-align: center;
+    line-height: 1.5;
+    color: #606060;
+}
+
+/* .about .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
