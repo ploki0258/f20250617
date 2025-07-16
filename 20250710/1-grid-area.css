@@ -8,9 +8,9 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
-        'header header header'
-        'sidebar main main '
-        'footer footer footer';
+        "header header header"
+        "sidebar main main "
+        "footer footer footer";
     height: 100vh;
     gap: 10px;
     padding: 10px;
@@ -27,7 +27,7 @@ body {
 
 .sidebar-item {
     grid-area: sidebar;
-    background-color: #4ecdc4;
+    background-color: #f0c33d;
     color: white;
     padding: 20px;
 }
@@ -41,7 +41,7 @@ body {
 
 .footer-item {
     grid-area: footer;
-    background-color: #96ceb4;
+    background-color: #33d58a;
     color: white;
     padding: 20px;
     text-align: center;

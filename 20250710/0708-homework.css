@@ -1,6 +1,11 @@
+body {
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+/* 頁首 */
 .header {
     height: 80px;
-    background-color: #1b58b9;
+    background-color: #2563eb;
     color: #fff;
 }
 
@@ -16,7 +21,7 @@
 
 .footer {
     height: 80px;
-    background-color: #0a2e67;
+    background-color: #1f2937;
     color: #fff;
 }
 
@@ -27,15 +32,16 @@
     height: 100%;
 }
 
+/* 內容 */
 .main {
     width: 100%;
-    min-height: calc(100vh - 160px);
+    min-height: calc(100vh - 80px - 80px);
     background-color: #eeeeee;
 }
 
 .main .wrap {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 250px 1fr;
     gap: 20px;
 }
 
@@ -46,6 +52,7 @@
     box-shadow: 3px 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* 側邊欄 */
 .main .subtitle {
     font-size: 18px;
     margin-bottom: 20px;
@@ -58,8 +65,15 @@
     margin-bottom: 20px;
 }
 
+/* 將 a 擴展到與 li相等 */
+.main .menu a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+
 .main .menu li {
-    border-radius: 5px;
+    border-radius: 10px;
     color: #5c5c5c;
     transition: all 0.3s ease;
 }
@@ -69,29 +83,10 @@
     color: #fff;
 }
 
-.main .menu a {
-    display: block;
-    width: 100%;
-    padding: 10px;
-}
-
+/* tools */
 .main .tools {
     display: grid;
     gap: 10px;
-}
-
-.main .tools li {
-    color: #5c5c5c;
-    font-size: 12px;
-    text-align: center;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.main .tools li:hover {
-    background-color: #f56747;
-    color: #fff;
 }
 
 .main .tools li a {
@@ -99,23 +94,40 @@
     width: 100%;
     padding: 10px;
 }
+.main .tools li {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    color: #5c5c5c;
+    font-size: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.main .tools li:hover {
+    background-color: #f56747;
+    color: #fff;
+}
 
+/* 右邊內容 */
 .main .article {
     display: grid;
     gap: 10px;
+    align-content: space-between;
 }
 
+/* 文章標題 */
 .main .article-title {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     color: #3253d9;
 }
 
+/* 文章內容 */
 .main .article-content {
     font-size: 14px;
     color: #5c5c5c;
 }
 
+/* 文章頁尾 */
 .main .article-footer {
     display: flex;
     justify-content: space-between;
@@ -130,13 +142,13 @@
 }
 
 .main .article-more a {
-    padding: 3px 6px;
+    border: 1px solid #112ed2;
     border-radius: 5px;
-    border: 1px solid #304ffc;
-    transition: all 0.3s ease;
+    padding: 3px 6px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 0;
+    transition: all 0.3s ease;
 }
 
 .main .article-more:hover a {
@@ -155,4 +167,3 @@
         grid-template-columns: 1fr;
     }
 }
-

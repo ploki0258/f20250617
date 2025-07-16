@@ -6,7 +6,7 @@
 }
 
 /* max-width 由大寫到小, min-width 由小寫到大 */
-/* 寫顛倒會沒效 */
+/* 寫顛倒會無效 */
 
 @media screen and (max-width: 768px) {
     .title {
