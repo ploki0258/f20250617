@@ -15,5 +15,59 @@
             "extensionName": ".css",
             "savePath": "/dist/css"
         }
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#1f6fd0",
+        "activityBar.background": "#1f6fd0",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#ee90bb",
+        "activityBarBadge.foreground": "#15202b",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#1f6fd0",
+        "statusBar.background": "#1857a4",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#1f6fd0",
+        "statusBarItem.remoteBackground": "#1857a4",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#1857a4",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#1857a499",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#1857a4",
+    "folder-color.pathColors": [
+        {
+            "folderPath": "site_20250617\\20250717\\1-animation.css\\",
+            "color": "foldercolorizer.color_00cc00"
+        },
+        {
+            "folderPath": "site_20250617\\20250717\\1-animation.html\\",
+            "color": "foldercolorizer.color_00cc00"
+        },
+        {
+            "folderPath": "site_20250617\\20250717\\2-animation-plugin.css\\",
+            "color": "foldercolorizer.color_66ccff"
+        },
+        {
+            "folderPath": "site_20250617\\20250717\\2-animation-plugin.html\\",
+            "color": "foldercolorizer.color_66ccff"
+        },
+        {
+            "folderPath": "site_20250617\\20250717\\20250710-homework.css\\",
+            "color": "foldercolorizer.color_ff00ff"
+        },
+        {
+            "folderPath": "site_20250617\\20250717\\20250710-homework.html\\",
+            "color": "foldercolorizer.color_ff00ff"
+        },
+        {
+            "folderPath": "site_20250617\\20250715\\20250715-homework.css\\",
+            "color": "foldercolorizer.color_99ccff"
+        },
+        {
+            "folderPath": "site_20250617\\20250715\\20250715-homework.html\\",
+            "color": "foldercolorizer.color_99ccff"
+        }
     ]
 }

@@ -1,5 +1,3 @@
 {
-    "recommendations": [
-        "ms-ceintl.vscode-language-pack-zh-hant"
-    ]
+    "recommendations": ["ms-ceintl.vscode-language-pack-zh-hant", "johnpapa.vscode-peacock"]
 }

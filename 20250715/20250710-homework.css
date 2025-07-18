@@ -1,8 +1,10 @@
 html,
 body {
     font-size: 18px;
+    font-family: "Noto Sans HK", sans-serif;
 }
 
+/* 頁首 */
 .header {
     /* background: #000; */
     color: #fff;
@@ -20,31 +22,41 @@ body {
     align-items: center;
 }
 
+/* Logo */
+.header .logo {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Menu */
 .header .menu ul {
     display: flex;
-    gap: 20px;
+    gap: 8px;
 }
 
 .header .menu li a {
     padding: 8px 15px;
     border-radius: 10px;
-    transition: all 0.5s ease;
-}
-
-.header .menu li.active a {
-    background: #ffd723;
-    color: #1e1e1e;
+    transition: all 0.3s ease; /* 過渡動畫 */
 }
 
 .header .menu li:hover a {
     background: #fff;
-    color: #1e1e1e;
+    color: #1f2937;
 }
 
+/* Active */
+.header .menu li.active a {
+    background: #f7ca01;
+    color: #111827;
+}
+
+/* 當容器 li 有 .active 而且 hover(狀態的改變) 的時候，a 的背景顏色要變成 #e4bf1b */
 .header .menu li.active:hover a {
-    background: #b4950f;
+    background: #f9db54;
 }
 
+/* 頁尾 */
 .footer {
     background: #1f2937;
     color: #fff;
@@ -55,21 +67,24 @@ body {
     font-size: 0.8rem;
 }
 
+/* 主要 */
 .main {
     height: 100vh;
     background: linear-gradient(to right, #667eea, #764ba2);
 }
 
+/* 背景遮罩 */
 .main .main-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #0000004e;
+    background: #00000052;
     z-index: 1;
 }
 
+/* 主要內容 */
 .main .main-content {
     position: relative;
     height: 100%;
@@ -86,17 +101,20 @@ body {
     color: #fff;
 }
 
+/* 標題 */
 .main .title {
     font-size: 3rem;
     font-weight: 700;
 }
 
+/* 內容 */
 .main .content {
     font-size: 1.3rem;
     line-height: 1.5;
     text-align: center;
 }
 
+/* 按鈕 */
 .main .btn-group {
     display: flex;
     gap: 20px;
@@ -107,18 +125,19 @@ body {
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
-    cursor: pointer;
-    transition: color 0.5s ease, background 0.5s ease, border-color 0.5s ease;
     background: #dedede;
     color: #1c1c1c;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.5s ease, background 0.5s ease, border-color 0.5s ease;
 }
 
 .main .btn:hover {
     background: #b4b4b4;
 }
 
+/* 按鈕 邊框樣式 */
 .main .btn.outline {
     background: transparent;
     border: 2px solid #dedede;
@@ -133,23 +152,25 @@ body {
 
 /* 定義主要狀態 */
 .main .btn.primary {
-    background: #f7d707;
+    background: #f7ca01;
     color: #484848;
 }
 
 .main .btn.primary:hover {
-    background: #c0b108;
+    background: #f9db54;
 }
 
+/* .danger樣式 */
 .main .btn.danger {
-    background: #ff401f;
+    background: #ff231f;
     color: #fff;
 }
 
 .main .btn.danger:hover {
-    background: #d43518;
+    background: #f5513f;
 }
 
+/* 關於我們 */
 .about {
     padding: 80px 0;
 }
@@ -161,31 +182,32 @@ body {
 }
 
 .about .row .col {
-    background-color: #f4f4f4;
     padding: 20px;
+    background-color: #f4f4f4;
     border-radius: 10px;
     box-shadow: 1px 3px 3px rgb(28 28 28 / 19%);
 }
 
 .about .title {
+    color: #1f2937;
     text-align: center;
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-size: 1.8rem;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
 .about .subtitle {
-    font-size: 1.2rem;
-    font-weight: 500;
+    color: #4f46e5;
+    font-size: 1.25rem;
+    font-weight: 600;
     margin-bottom: 10px;
     text-align: center;
-    color: #4f46e5;
 }
 
 .about .content {
+    color: #606060;
     text-align: center;
     line-height: 1.5;
-    color: #606060;
 }
 
 /* .about .wrap {
