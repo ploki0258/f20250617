@@ -55,11 +55,13 @@
         },
         {
             "folderPath": "site_20250617\\20250717\\20250710-homework.css\\",
-            "color": "foldercolorizer.color_ff00ff"
+            "color": "foldercolorizer.color_66cc99",
+            "badge": "HW"
         },
         {
             "folderPath": "site_20250617\\20250717\\20250710-homework.html\\",
-            "color": "foldercolorizer.color_ff00ff"
+            "color": "foldercolorizer.color_66cc99",
+            "badge": "HW"
         },
         {
             "folderPath": "site_20250617\\20250715\\20250715-homework.css\\",
@@ -68,6 +70,29 @@
         {
             "folderPath": "site_20250617\\20250715\\20250715-homework.html\\",
             "color": "foldercolorizer.color_99ccff"
+        },
+        {
+            "folderPath": "site_20250617\\css_homework_0710_transitions_20250715\\1-css-transitions.css\\",
+            "color": "foldercolorizer.color_ff99ff"
+        },
+        {
+            "folderPath": "site_20250617\\css_homework_0710_transitions_20250715\\1-css-transitions.html\\",
+            "color": "foldercolorizer.color_ff99ff"
+        },
+        {
+            "folderPath": "site_20250617\\css_homework_0710_transitions_20250715\\20250710-homework.css\\",
+            "color": "foldercolorizer.color_66cc99",
+            "badge": "HW"
+        },
+        {
+            "folderPath": "site_20250617\\css_homework_0710_transitions_20250715\\20250710-homework.html\\",
+            "color": "foldercolorizer.color_66cc99",
+            "badge": "HW"
+        },
+        {
+            "folderPath": "site_20250617\\homework\\",
+            "color": "foldercolorizer.color_66cc99",
+            "badge": "HW"
         }
     ]
 }
