@@ -1,13 +1,13 @@
 .box {
     width: 100px;
     height: 100px;
-    background-color: #ff8282;
     border-radius: 10px;
+    background-color: #ff8282;
     color: #fff;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .bounce {

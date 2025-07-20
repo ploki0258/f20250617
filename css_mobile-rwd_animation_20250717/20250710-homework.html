@@ -3,29 +3,38 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>20250710-homework</title>
+        <title>20250710 Homework</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="reset.css" />
         <link rel="stylesheet" href="20250710-homework.css" />
     </head>
+
     <body>
+        <!-- 頁首 -->
         <header class="header">
             <div class="container">
+                <!-- checkbox -->
                 <input type="checkbox" id="mobile-menu-toggle" />
                 <div class="wrap">
+                    <!-- Logo -->
                     <div class="logo">品牌Logo</div>
+                    <!-- Menu -->
                     <div class="menu">
                         <ul>
-                            <li><a href="#">品牌Logo</a></li>
+                            <li><h3>品牌Logo</h3></li>
                             <li><a href="#">首頁</a></li>
                             <li><a href="#">產品</a></li>
                             <li><a href="#">關於</a></li>
+                            <!-- Active -->
                             <li class="active"><a href="#">登入</a></li>
                         </ul>
                     </div>
+                    <!-- 手機版 漢堡盒 -->
                     <div class="mobile-menu">
                         <label for="mobile-menu-toggle" class="menu-icon">
                             <span></span>
@@ -33,25 +42,34 @@
                             <span></span>
                         </label>
                     </div>
+                    <!-- 側邊欄 手機版 menu 背景遮罩 -->
                     <label for="mobile-menu-toggle" class="mobile-menu-mask"></label>
                 </div>
             </div>
         </header>
+        <!-- 主要 -->
         <main class="main">
+            <!-- 背景遮罩 -->
             <div class="main-bg"></div>
+            <!-- 主要內容 -->
             <div class="main-content">
                 <div class="container">
                     <div class="wrap">
+                        <!-- 標題 -->
                         <div class="title">探索無限可能</div>
+                        <!-- 內容 -->
                         <div class="content">我們致力於提供創新的解決方案，幫助您實現業務增長和數位轉型。加入我們，一同開創未來。</div>
+                        <!-- 按鈕 -->
                         <div class="btn-group">
-                            <a href="#" class="btn warning">立即開始</a>
+                            <a href="#" class="btn primary">立即開始</a>
                             <a href="#" class="btn outline">了解更多</a>
+                            <!-- <a class="btn danger">超連結</a> -->
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+        <!-- 關於我們 -->
         <div class="about">
             <div class="container">
                 <div class="wrap">
@@ -73,6 +91,7 @@
                 </div>
             </div>
         </div>
+        <!-- 頁尾 -->
         <footer class="footer">
             <div class="container">
                 <div class="copyright">&copy; 2025 我的實驗室</div>

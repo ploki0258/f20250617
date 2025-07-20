@@ -1,0 +1,95 @@
+:root {
+    --background: #9132ea;
+}
+
+.main {
+    background: var(--background);
+    height: 100vh;
+}
+
+/* 背景遮罩 */
+.main .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ececec53;
+}
+
+.main .content {
+    height: 100%;
+    width: 100%;
+    padding: 50px 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Ball */
+.ball {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: brown;
+    box-shadow: 2px 3px 10px 0px #f47c7c;
+    /* CSS動畫 */
+    animation-name: move;
+    animation-duration: 5.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+/* .dark {
+    position: absolute;
+    left: 20px;
+    bottom: -500px;
+}
+
+.dark .btn {
+    background-color: #708090;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 15px;
+    transition: all 0.5s ease;
+}
+
+.dark .btn:hover {
+    background-color: #3f4852;
+    color: #fff;
+} */
+
+@keyframes move {
+    0% {
+        transform: translate(-150px, 0px);
+        background-color: brown;
+        box-shadow: 2px 3px 10px 0px #f47c7c;
+        display: none;
+    }
+    25% {
+        transform: translate(250px, 500px);
+        background-color: #a55d2a;
+        box-shadow: 2px 3px 10px 0px #c67b45;
+        display: block;
+    }
+    50% {
+        transform: translate(650px, 0px);
+        background-color: #a5952a;
+        box-shadow: 2px 3px 10px 0px #c4b347;
+        display: block;
+    }
+    75% {
+        transform: translate(1050px, 500px);
+        background-color: #2aa534;
+        box-shadow: 2px 3px 10px 0px #4bca55;
+        display: block;
+    }
+    100% {
+        transform: translate(1450px, 0px);
+        background-color: #2a4ba5;
+        box-shadow: 2px 3px 10px 0px #4567c3;
+        display: none;
+    }
+}

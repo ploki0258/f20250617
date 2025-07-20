@@ -4,6 +4,10 @@ body {
     font-family: "Noto Sans HK", sans-serif;
 }
 
+.container {
+    max-width: 1400px;
+}
+
 /* 頁首 */
 .header {
     /* background: #000; */

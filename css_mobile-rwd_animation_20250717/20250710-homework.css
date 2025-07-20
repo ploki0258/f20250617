@@ -1,14 +1,16 @@
 html,
 body {
-    font-size: 16px;
-    font-family: "Noto Sans TC", sans-serif;
+    font-size: 18px;
+    font-family: "Noto Sans HK", sans-serif;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1400px;
 }
 
+/* 頁首 */
 .header {
+    /* background: #000; */
     color: #fff;
     position: absolute;
     top: 0;
@@ -20,16 +22,23 @@ body {
 
 .header .wrap {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
+/* Logo */
+.header .logo {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Menu */
 .header .menu ul {
     display: flex;
-    gap: 20px;
-    align-items: center;
+    gap: 8px;
 }
 
+/* 隱藏 手機版標題 */
 .header .menu li:first-child {
     display: none;
 }
@@ -37,26 +46,29 @@ body {
 .header .menu li a {
     padding: 8px 15px;
     border-radius: 10px;
-    transition: all 0.5s ease;
-}
-
-.header .menu li.active a {
-    background: #ffd723;
-    color: #1e1e1e;
+    transition: all 0.3s ease; /* 過渡動畫 */
 }
 
 .header .menu li:hover a {
     background: #fff;
-    color: #1e1e1e;
+    color: #1f2937;
+}
+
+/* Active */
+.header .menu li.active a {
+    background: #f7ca01;
+    color: #111827;
 }
 
 /* 當容器 li 有 .active 而且 hover(狀態的改變) 的時候，a 的背景顏色要變成 #e4bf1b */
 .header .menu li.active:hover a {
-    background: #e4bf1b;
+    background: #f9db54;
 }
 
+/* 手機版 漢堡盒 */
 .header .mobile-menu {
     width: 35px;
+    /* pc版時 隱藏漢堡盒 */
     display: none;
 }
 
@@ -71,33 +83,52 @@ body {
     display: block;
     width: 100%;
     height: 5px;
-    background: #fff;
+    background: #ececec;
     border-radius: 10px;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .header .menu-icon:hover > span {
     background: #e4bf1b;
 }
 
+/* 側邊欄 手機版 menu 背景遮罩 */
+.mobile-menu-mask {
+    background: #00000075;
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    opacity: 0;
+    /* transition: all 0.3s ease; */
+}
+
+/* checkbox隱藏 */
 #mobile-menu-toggle {
     display: none;
 }
 
+/* 手機版漢堡盒 狀態切換 */
 #mobile-menu-toggle:checked + .wrap .menu-icon > span:nth-child(1) {
-    transform: rotate(45deg) translateY(6px) translateX(10px);
+    /* transform: 旋轉(45度) 位移(x:8px, y:7px) */
+    transform: rotate(45deg) translate(8px, 7px);
 }
 
 #mobile-menu-toggle:checked + .wrap .menu-icon > span:nth-child(2) {
+    /* 透明度: 0 */
     opacity: 0;
 }
 
 #mobile-menu-toggle:checked + .wrap .menu-icon > span:nth-child(3) {
-    transform: rotate(-45deg) translateX(8px) translateY(-4px);
+    /* transform: 旋轉(-45度) 位移(x:7px, y:-6px) */
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
+/* 頁尾 */
 .footer {
-    background: #080648;
+    background: #1f2937;
     color: #fff;
 }
 
@@ -106,21 +137,24 @@ body {
     font-size: 0.8rem;
 }
 
+/* 主要 */
 .main {
     height: 100vh;
     background: linear-gradient(to right, #667eea, #764ba2);
 }
 
+/* 背景遮罩 */
 .main .main-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #0000004e;
+    background: #00000052;
     z-index: 1;
 }
 
+/* 主要內容 */
 .main .main-content {
     position: relative;
     height: 100%;
@@ -137,17 +171,20 @@ body {
     color: #fff;
 }
 
+/* 標題 */
 .main .title {
     font-size: 3rem;
     font-weight: 700;
 }
 
+/* 內容 */
 .main .content {
     font-size: 1.3rem;
     line-height: 1.5;
     text-align: center;
 }
 
+/* 按鈕 */
 .main .btn-group {
     display: flex;
     gap: 20px;
@@ -158,18 +195,19 @@ body {
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
-    cursor: pointer;
-    transition: color 0.5s ease, background 0.5s ease, border-color 0.5s ease;
     background: #dedede;
     color: #1c1c1c;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.5s ease, background 0.5s ease, border-color 0.5s ease;
 }
 
 .main .btn:hover {
     background: #b4b4b4;
 }
 
+/* 按鈕 邊框樣式 */
 .main .btn.outline {
     background: transparent;
     border: 2px solid #dedede;
@@ -184,41 +222,25 @@ body {
 
 /* 定義主要狀態 */
 .main .btn.primary {
-    background: #1f31d3;
-    color: #fff;
+    background: #f7ca01;
+    color: #484848;
 }
 
 .main .btn.primary:hover {
-    background: #1828b6;
+    background: #f9db54;
 }
 
+/* .danger樣式 */
 .main .btn.danger {
-    background: #ff401f;
+    background: #ff231f;
     color: #fff;
 }
 
 .main .btn.danger:hover {
-    background: #d43518;
+    background: #f5513f;
 }
 
-.main .btn.success {
-    background: #00b894;
-    color: #fff;
-}
-
-.main .btn.success:hover {
-    background: #009678;
-}
-
-.main .btn.warning {
-    background: #ff9f1c;
-    color: #fff;
-}
-
-.main .btn.warning:hover {
-    background: #d98910;
-}
-
+/* 關於我們 */
 .about {
     padding: 80px 0;
 }
@@ -230,103 +252,71 @@ body {
 }
 
 .about .row .col {
-    background-color: #f4f4f4;
     padding: 20px;
+    background-color: #f4f4f4;
     border-radius: 10px;
     box-shadow: 1px 3px 3px rgb(28 28 28 / 19%);
-    transition: all 0.5s ease;
 }
 
+/* transform 效果 */
 .about .row .col:hover {
-    transform: scale(1.05) translateY(-5px);
+    /* 尺寸放大 1.05倍 位移 Y軸上移5px */
+    transform: scale(1.05) translate(0, -5px);
 }
 
 .about .title {
+    color: #1f2937;
     text-align: center;
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-size: 1.8rem;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
 .about .subtitle {
-    font-size: 1.2rem;
-    font-weight: 500;
+    color: #4f46e5;
+    font-size: 1.25rem;
+    font-weight: 600;
     margin-bottom: 10px;
     text-align: center;
-    color: #4f46e5;
 }
 
 .about .content {
+    color: #606060;
     text-align: center;
     line-height: 1.5;
-    color: #606060;
 }
 
-.mobile-menu-mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: #0000004e;
-    z-index: 8;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-@media (max-width: 768px) {
-    .main .title {
-        font-size: 2.5rem;
-    }
-
-    .main .content {
-        font-size: 1.1rem;
-    }
-
-    .main .btn-group {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .main .btn {
-        width: 80%;
-        display: flex;
-        margin: 0 auto;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .about .wrap .row {
-        grid-template-columns: 1fr;
-    }
-
+/* 移動裝置版 RWD */
+@media screen and (max-width: 768px) {
+    /* 移動職裝置時 顯示漢堡盒 */
     .header .mobile-menu {
         display: block;
-        position: relative;
-        z-index: 10;
     }
 
+    /* 手機版 menu 改為 側邊欄 一開始先隱藏 */
     .header .menu {
-        transition: all 0.5s ease;
-        position: fixed;
-        left: -100%;
-        top: 0;
-        height: 100vh;
         width: 50%;
-        background: #9567c4;
+        height: 100vh;
+        background: linear-gradient(to top, #43549e, #673c92);
+        padding: 50px 20px;
+        position: fixed;
+        top: 0;
+        left: -100%;
         z-index: 9;
-        padding: 60px 20px;
+        transition: all 0.3s ease;
     }
 
+    /* 點擊時 顯示側邊欄 */
     #mobile-menu-toggle:checked + .wrap .menu {
         left: 0;
     }
 
     #mobile-menu-toggle:checked + .wrap .mobile-menu-mask {
         opacity: 1;
-        height: 100%;
+        width: 100%;
     }
 
+    /* 排版改為 縱向排版 */
     .header .menu ul {
         flex-direction: column;
     }
@@ -335,18 +325,59 @@ body {
         width: 100%;
     }
 
-    .header .menu li:first-child {
+    .header .menu li a {
         display: block;
+        width: 100%;
+        text-align: center;
     }
 
-    .header .menu li a {
-        width: 100%;
+    /* 顯示 手機版標題 */
+    .header .menu li:first-child {
         display: block;
+        font-size: 18px;
+        font-weight: 500;
         text-align: center;
+    }
+
+    .header .mobile-menu {
+        display: block;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* 探索無限可能 */
+    /* 標題大小縮小 */
+    .main .title {
+        font-size: 2.5rem;
+    }
+
+    /* 內容大小縮小 */
+    .main .content {
+        font-size: 1.1rem;
+    }
+
+    /* 排版改為 縱向排版 */
+    .main .btn-group {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    /* 按鈕改為 寬版 */
+    .main .btn {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 我們的特色 */
+    .about .wrap .row {
+        grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .header .menu {
         width: 100%;
     }

@@ -8,12 +8,17 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    /* 呼叫CSS動畫 */
     /* animation: move 2s linear infinite; */
     animation-name: move;
     animation-duration: 2s;
+    /* 動畫的播放次數 infinite: 循環 */
     animation-iteration-count: infinite;
+    /* 動畫播放結束時的最終位置 */
     animation-fill-mode: both;
+    /* 動畫的播放方向 */
     animation-direction: alternate;
+    /* 動畫的速度曲線 */
     animation-timing-function: ease-in-out;
 }
 
@@ -22,14 +27,40 @@
 }
 
 .delay {
-    animation-delay: 2.5s;
+    /* 動畫的延遲時間 */
+    animation-delay: 2s;
 }
 
+.rotate {
+    animation-name: rotate;
+    animation-duration: 5s;
+}
+
+/* 移動動畫 */
 @keyframes move {
     from {
         transform: translateX(0);
     }
     to {
         transform: translateX(500px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg) translate(100px, 50px);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.5);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        background-color: #f104ae;
     }
 }
