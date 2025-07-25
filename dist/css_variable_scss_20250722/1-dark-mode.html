@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Dark Mode</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="1-dark-mode.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">明亮模式</div>
+        <div class="fn">
+            <button class="btn" onclick="toggleTheme()">Theme Switch</button>
+        </div>
+    </div>
+</body>
+<script>
+    function toggleTheme() {
+        const html = document.querySelector("html");
+        const textTheme = document.querySelector(".box");
+        // 切換主題 文字、背景變更 
+        textTheme.textContent = html.dataset.theme !== "dark" ? "暗黑模式" : "明亮模式";
+        html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+    }
+</script>
+
+</html>
