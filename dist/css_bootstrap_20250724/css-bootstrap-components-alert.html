@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Components Alert</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <style>
+        /* 將 checkbox 隱藏 */
+        .state-toggle {
+            display: none;
+        }
+
+        /* 將 alert 隱藏 */
+        .state-message {
+            display: none;
+        }
+
+        /* 當 checkbox 被選中時，顯示對應的 alert */
+        #state-message-success:checked~.state-success {
+            display: block;
+        }
+
+        #state-message-fail:checked~.state-fail {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="alert alert-primary" role="alert">A simple primary alert—check it out!</div>
+        <div class="alert alert-secondary" role="alert">A simple secondary alert—check it out!</div>
+        <div class="alert alert-success" role="alert">A simple success alert—check it out!</div>
+        <div class="alert alert-danger" role="alert">A simple danger alert—check it out!</div>
+        <div class="alert alert-warning" role="alert">A simple warning alert—check it out!</div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>注意！</strong> 這是一個可關閉的警報。
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <!-- CSS自製 alert效果 -->
+        <input type="checkbox" id="state-message-success" class="state-toggle" />
+        <input type="checkbox" id="state-message-fail" class="state-toggle" />
+        <div class="alert alert-success state-message state-success" role="alert">新增成功</div>
+        <div class="alert alert-danger state-message state-fail" role="alert">新增失敗</div>
+        <div>
+            <label for="state-message-success" class="btn btn-primary">新增成功觸發</label>
+            <label for="state-message-fail" class="btn btn-danger">新增失敗觸發</label>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+    crossorigin="anonymous"></script>
+
+</html>
