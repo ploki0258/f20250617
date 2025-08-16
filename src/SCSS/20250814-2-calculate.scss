@@ -23,7 +23,7 @@
         height: 40px;
         padding: 0 10px;
         outline: none;
-        border: 1px solid #ccc;
+        border: 0.1rem solid #ccc;
         border-radius: 5px;
         font-size: 16px;
         color: #333;
@@ -32,6 +32,8 @@
 
         &:focus {
             border-color: var(--color);
+            border: 0.1rem solid var(--color);
+            box-shadow: 2px 4px 8px 1px #b4e0e4;
         }
     }
 }
@@ -43,7 +45,7 @@
     button {
         padding: 10px 20px;
         border: 0;
-        border-radius: 5px;
+        border-radius: 0.5rem;
         background-color: var(--color);
         color: #fff;
         cursor: pointer;
@@ -51,20 +53,34 @@
         transition: all 0.3s ease;
 
         &:hover {
-            background-color: #ed3c3c;
+            background-color: #6080f3;
+            color: rgb(64, 64, 64);
         }
     }
 }
 
-.result {
+.result-group {
     padding: 20px;
     min-height: 100px;
-    border: 1px solid var(--color);
+    border: 0.1rem solid var(--color);
     border-radius: 5px;
     font-size: 20px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
     color: var(--color);
     font-weight: bold;
+    position: relative;
+
+    .tip {
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .result {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
