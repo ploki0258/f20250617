@@ -17,6 +17,7 @@ dom.calculate.addEventListener("click", function () {
     // 取得數字
     let number = dom.number.value;
 
+    // 檢查是否有輸入
     if (!number) {
         alert("請輸入阿拉伯數字");
         return;
@@ -123,8 +124,7 @@ const chineseMap = {
 const numberToChineseHashMap = function (number) {
     // 不需要轉換型態也可比對
     // number = +number
-    console.log(number, typeof number);
-    console.log(number, "in numberToChineseHashMap");
+    console.log(number, typeof number, "in numberToChineseHashMap");
     return chineseMap[number] ? chineseMap[number] : "無效的數字";
 };
 
