@@ -10,19 +10,21 @@
 
 <body>
     <div class="container">
-        <h1>學生成績表</h1>
+        <h1 class="title">學生成績表</h1>
         <div class="fn">
             <button class="btn" id="generate-student-btn">產生學生資料</button>
             <button class="btn" id="export-csv-btn">匯出 CSV</button>
         </div>
-        <table class="table" id="student-score-table">
+        <table class="table" id="students-table">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>學生姓名</th>
                     <th>國文</th>
                     <th>英文</th>
                     <th>數學</th>
                     <th>總分</th>
+                    <th>平均</th>
                 </tr>
             </thead>
             <tbody>

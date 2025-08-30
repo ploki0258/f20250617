@@ -26,6 +26,7 @@ const generateStudentData = function () {
         studnet.english = Math.floor(Math.random() * 100);
         studnet.math = Math.floor(Math.random() * 100);
         studnet.total = studnet.chinese + studnet.english + studnet.math;
+        studnet.avg = studnet.total / 3;
     });
 
     return students;
@@ -38,10 +39,10 @@ const generateStudentData = function () {
  */
 const exportCSV = function (students) {
     let csv = "";
-    // \n 換行
-    csv += "學生姓名,國文,英文,數學,總分\n";
+    // \n:換行
+    csv += " ,學生姓名,國文,英文,數學,總分,平均\n";
     students.forEach(function (student, index) {
-        csv += `${student.name},${student.chinese},${student.english},${student.math},${student.total}\n`;
+        csv += `${index + 1},${student.name},${student.chinese},${student.english},${student.math},${student.total},${Math.round(student.avg)}\n`;
     });
     return csv;
 };
@@ -52,13 +53,17 @@ const exportCSV = function (students) {
  */
 const downloadCSV = function (csv) {
     let a = document.createElement("a");
+    const bom = "\uFEFF";
+    const csvWithBom = bom + csv;
+
     // 宣告 csv 檔案表頭，編碼為 utf-8，並將 csv 內容進行編碼
-    a.href = "data:text/csv;charset=utf-8," + encodeURIComponent(csv);
+    a.href = "data:text/csv;charset=utf-8," + encodeURIComponent(csvWithBom);
     // 下載檔案名稱
-    a.download = "students.csv";
+    a.download = "students score table.csv";
     a.click();
 };
 
+// 取得 html 元素
 let dom = {
     studentsTable: document.querySelector("#students-table"),
     generateStudentBtn: document.querySelector("#generate-student-btn"),
@@ -77,12 +82,17 @@ dom.generateStudentBtn.addEventListener("click", function () {
         let englishClass = student.english < 60 ? "lose" : "";
         let mathClass = student.math < 60 ? "lose" : "";
 
+        // 總分大於 180 分，顯示綠色
+        let totalClass = student.total >= 180 ? "great" : "";
+
         tbody += `<tr>
+        <td>${index + 1}</td>
         <td>${student.name}</td>
         <td class="${chineseClass}">${student.chinese}</td>
         <td class="${englishClass}">${student.english}</td>
         <td class="${mathClass}">${student.math}</td>
-        <td>${student.total}</td>
+        <td class="${totalClass}">${student.total}</td>
+        <td>${Math.round(student.avg)}</td>
         </tr>
     `;
     });
@@ -94,6 +104,7 @@ dom.generateStudentBtn.addEventListener("click", function () {
 });
 
 dom.exportCSVBtn.addEventListener("click", function () {
+    // 如果 學生資料不存在 就不執行 並跳出提示視窗
     if (!students) {
         Swal.fire({
             title: "產生 CSV 失敗",
@@ -103,6 +114,8 @@ dom.exportCSVBtn.addEventListener("click", function () {
         });
         return;
     }
+
     let csv = exportCSV(students);
+    // console.log(csv);
     downloadCSV(csv);
 });

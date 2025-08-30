@@ -1,6 +1,10 @@
 @import "./components/reset";
-.title {
+
+:root {
     --color: #304ec7;
+}
+
+.title {
     text-align: center;
     font-size: 2rem;
     padding-bottom: 10px;
@@ -17,7 +21,9 @@
 
     .input-group {
         display: grid;
+        grid-template-columns: 70px 1fr;
         gap: 5px;
+        align-items: center;
 
         input {
             width: 100%;
@@ -45,6 +51,7 @@
         color: #3a3a3a;
         cursor: pointer;
         transition: all 0.3s ease;
+
         &:hover {
             background-color: #39a3cd;
             color: #fff;
@@ -64,6 +71,11 @@
     }
 
     th {
+        background-color: #f0f0f0;
+    }
+
+    tbody tr td:nth-child(1) {
+        font-weight: bold;
         background-color: #f0f0f0;
     }
 }
