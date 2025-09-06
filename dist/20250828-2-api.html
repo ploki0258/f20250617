@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>API</title>
-    </head>
-    <body>
-        <div class="container">
-            <h1 class="title">API</h1>
-            <div class="input-group">
-                <label for="api-url">API URL</label>
-                <input type="text" id="api-url" />
-            </div>
-            <div class="fn">
-                <button class="btn" id="connect-btn">連線</button>
-            </div>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API</title>
+    <link rel="stylesheet" href="./css/20250828-2-api.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">API 連線測試</h1>
+        <div class="input-group">
+            <label for="api-url">API URL：</label>
+            <input type="text" id="api-url" />
         </div>
-    </body>
-    <script type="module" src="js/20250828-2-api.js"></script>
+        <div class="fn">
+            <button class="btn" id="connect-btn">連線</button>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="js/20250828-2-api-2.js"></script>
+
 </html>

@@ -27,18 +27,24 @@ const addScore = function () {
 
     let total = +chinese + +english + +math;
     // console.log(name, chinese, english, math, total);
+    let uid = `${Date.now()}_${Math.floor(Math.random() * 1000)}`;
 
-    let tr = `<tr>
+    let classChinese = scorePass(chinese);
+    let classEnglish = scorePass(english);
+    let classMath = scorePass(math);
+
+    let tr = `<tr date-uid=${uid}>
                 <td>${name}</td>
-                <td>${chinese}</td>
-                <td>${english}</td>
-                <td>${math}</td>
+                <td class="${classChinese}">${chinese}</td>
+                <td class="${classEnglish}">${english}</td>
+                <td class="${classMath}">${math}</td>
                 <td>${total}</td>
     </tr>`;
 
     dom.table.querySelector("tbody").insertAdjacentHTML("beforeend", tr);
 
     students.push({
+        uid,
         name,
         chinese,
         english,
@@ -54,6 +60,19 @@ const addScore = function () {
     dom.chinese.value = "";
     dom.english.value = "";
     dom.math.value = "";
+};
+
+/**
+ * 檢查成績是否有及格
+ * @param {*} score 分數
+ * @returns 類別名稱
+ */
+const scorePass = function (score) {
+    score = +score;
+    // console.log(typeof score);
+    let className = +score < 60 ? "no-pass" : "";
+
+    return className;
 };
 
 /**
@@ -102,6 +121,9 @@ dom.math.addEventListener("keyup", function (e) {
     }
 });
 
+/**
+ * 初始化資料，並載入
+ */
 const init = function () {
     // 從瀏覽器的 localStorage 取得本地端資料
     let jsonStr = localStorage.getItem("students");
@@ -109,11 +131,15 @@ const init = function () {
     students = jsonStr ? JSON.parse(jsonStr) : [];
 
     students.forEach((student) => {
-        let tr = `<tr>
+        let classChinese = scorePass(student.chinese);
+        let classEnglish = scorePass(student.english);
+        let classMath = scorePass(student.math);
+
+        let tr = `<tr data-uid="${student.uid}">
                 <td>${student.name}</td>
-                <td>${student.chinese}</td>
-                <td>${student.english}</td>
-                <td>${student.math}</td>
+                <td class="${classChinese}">${student.chinese}</td>
+                <td class="${classEnglish}">${student.english}</td>
+                <td class="${classMath}">${student.math}</td>
                 <td>${student.total}</td>
         </tr>`;
 
@@ -123,23 +149,88 @@ const init = function () {
 
 init();
 
+// 使用 forEach 來為每一個 tr 添加 click 事件
+// 但如果後續又新增 tr，則不會觸發 click 事件
+// trs.forEach(function (tr) {
+//     tr.addEventListener("click", function (e) {
+//         console.log(e.target);
+//     });
+// });
+
 const bindTr = function () {
-    let trs = table.querySelectorAll("tbody tr");
+    // 取得 tbody tr 元素
+    let trs = dom.table.querySelectorAll("tbody tr");
     console.log(trs);
 
-    trs.forEach(function (tr) {
-        tr.addEventListener("click", function (e) {
-            console.log(e.target);
-        });
+    // trs 並非 DOM 元素，所以無法使用 addEventListener
+    trs.addEventListener("click", function (e) {
+        console.log(e.target);
+    });
+    // 寫成 function 每次異動時，重新執行一次
+    // 會有 n+1 的效能問題
+};
+
+const bindTbody = function () {
+    let tbody = dom.table.querySelector("tbody");
+    tbody.addEventListener("click", async function (e) {
+        // console.log(e.target);
+        if (e.target.tagName === "TD") {
+            // console.log("TD");
+            // 找到上一層的 tr
+            let tr = e.target.closest("tr");
+            // 如果有找到 tr
+            if (tr) {
+                // console.log(tr.dataset.uid);
+                let result = await Swal.fire({
+                    title: "確定要刪除嗎？",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "確定",
+                    cancelButtonText: "取消",
+                });
+
+                // 確認是否有接收到 result
+                // console.log(result);
+
+                if (result.isConfirmed === true) {
+                    // 刪除 tr
+                    tr.remove();
+
+                    // 抓取 tr 的 data-uid
+                    let uid = tr.dataset.uid;
+
+                    // 更新 students 陣列
+                    students = students.filter(function (student) {
+                        return uid !== student.uid;
+                    });
+
+                    // 更新 localStorage
+                    localStorage.setItem("students", JSON.stringify(students));
+                }
+
+                // 更新 students 陣列
+                // dataset => data-
+                // dataset.index => 取得 data-index 的值
+                // let index = tr.dataset.index
+                // 使用 index 會有順序問題
+                // 刪除完畢後，在使用 init 重新綁定 (OK，但有效能問題)
+            }
+        }
     });
 };
 
+// bindTbody();
+
+/**
+ * 一般條件判斷的寫法
+ * @param {*} e 事件氣泡
+ */
 const normalIf = async function (e) {
     if (e.target.tagName == "TD") {
         // 找到上一層的 tr
         let tr = e.target.closest("tr");
         if (tr) {
-            let result = await wal.fire({
+            let result = await Swal.fire({
                 title: "確定要刪除嗎？",
                 icon: "warning",
                 showCancelButton: true,
@@ -147,12 +238,13 @@ const normalIf = async function (e) {
                 cancelButtonText: "取消",
             });
 
+            console.log(result);
             if (result.isConfirmed) {
-                // 刪除 tr
-                tr.remove();
-
                 // 抓取 tr 的 data-uid
                 let uid = tr.dataset.uid;
+
+                // 刪除 tr
+                tr.remove();
 
                 // 更新 students 陣列
                 students = students.filter(function (student) {
@@ -173,13 +265,20 @@ const normalIf = async function (e) {
     }
 };
 
+/**
+ * 簡化判斷式的寫法
+ * @param {*} e 事件起泡
+ * @returns
+ */
 const notIf = async function (e) {
     // 判斷點到的是否為 td
     if (e.target.tagName != "TD") {
         return;
     }
 
+    // 找到上一層的 tr
     let tr = e.target.closest("tr");
+    // 如果沒有 tr 就不執行
     if (!tr) {
         return;
     }
@@ -192,6 +291,7 @@ const notIf = async function (e) {
         cancelButtonText: "取消",
     });
 
+    // 如果沒有按下確認 就不執行
     if (!result.isConfirmed) {
         return;
     }
@@ -213,17 +313,17 @@ const notIf = async function (e) {
 
 // 綁定 tbody 統一接收 click 事件
 // 1. 抓取點擊的 tr
-const bindTbody = function () {
+const bindTbody2 = function () {
     let tbody = dom.table.querySelector("tbody");
     tbody.addEventListener("click", async function (e) {
-        // normalIf(e)
-        notIf(e);
+        normalIf(e);
+        // notIf(e);
     });
 };
 
-bindTbody();
+bindTbody2();
 
-/**
+/** TODO
  * 點選特定 tr 時，可刪除該 tr
  * 1. 抓取點擊的 tr
  * 2. 確認刪除

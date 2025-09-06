@@ -59,7 +59,8 @@
     th,
     td {
         border: 1px solid #ccc;
-        padding: 10px;
+        padding: 5px 10px;
+        text-align: center;
     }
 
     th {
@@ -73,5 +74,9 @@
     tbody tr:hover {
         cursor: pointer;
         background-color: #fdd3ac;
+    }
+
+    .no-pass {
+        color: rgb(207, 22, 22);
     }
 }

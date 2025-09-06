@@ -1,0 +1,51 @@
+@import "./components/reset";
+
+.title {
+    text-align: center;
+    color: #075d92;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #075d92;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    label {
+        font-weight: bold;
+    }
+
+    input {
+        border: 1px solid #ccc;
+        padding: 0 10px;
+        border-radius: 10px;
+        width: 100%;
+        height: 40px;
+        outline: none;
+
+        &:hover {
+            border-color: #2d34fa;
+        }
+    }
+}
+
+.fn {
+    text-align: right;
+
+    .btn {
+        background-color: #2d97fa;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #1d87e5;
+        }
+    }
+}

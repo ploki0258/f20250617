@@ -1,0 +1,25 @@
+@import "./components/reset";
+
+:root {
+    --colr: #081aa0;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.sleep {
+    color: var(--colr);
+    font-weight: 400;
+    margin-bottom: 10px;
+
+    &.sen {
+        color: rgb(215, 68, 68);
+    }
+}
+
+.result {
+    display: none;
+}
