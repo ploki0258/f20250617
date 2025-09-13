@@ -7,10 +7,13 @@ const dom = {
     disconnectBtn: document.querySelector("#disconnect-btn"),
     connectWrap: document.querySelector("#connect-wrap"),
 
+    // 連線模式
+    connectMode: document.querySelector("#connect-mode"),
+
     // 接收資料
-    getUid: document.querySelector("#get-uid"),
-    getBtn: document.querySelector("#get-btn"),
-    responseTable: document.querySelector("#response-table"),
+    // getUid: document.querySelector("#get-uid"),
+    // getBtn: document.querySelector("#get-btn"),
+    // responseTable: document.querySelector("#response-table"),
 
     // 發送資料
     userName: document.querySelector("#user-name"),
@@ -26,10 +29,38 @@ const dom = {
     editorAge: document.querySelector("#edit-age"),
     updateBtn: document.querySelector("#update-btn"),
     cancelBtn: document.querySelector("#cancel-btn"),
+
+    // 切換頁籤
+    tabApp: document.querySelector("#tab-app"),
+    tabList: document.querySelector("#tab-list"),
+    tabAdd: document.querySelector("#tab-add"),
 };
 // console.log(dom);
 
 let api = null;
+
+dom.tabApp.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    pageToggle(e);
+});
+
+const pageToggle = function (e) {
+    let target = e.target;
+    // 頁籤切換
+    if (target.dataset.tab) {
+        dom.tabApp.querySelectorAll("a").forEach(function (tab) {
+            tab.classList.remove("active");
+        });
+        target.classList.add("active");
+    }
+
+    // 內容切換
+    document.querySelectorAll(".tab-content").forEach(function (content) {
+        content.classList.remove("active");
+    });
+    document.querySelector(`#${target.dataset.tab}`).classList.add("active");
+};
 
 dom.connectBtn.addEventListener("click", async function () {
     // 重置狀態
@@ -60,6 +91,7 @@ dom.connectBtn.addEventListener("click", async function () {
             });
             // 添加狀態
             dom.connectWrap.classList.add("connected");
+            dom.connectMode.classList.add("active");
             // 鎖定輸入框(不能更動)
             dom.apiUrl.disabled = true;
         } else {
@@ -94,7 +126,10 @@ dom.disconnectBtn.addEventListener("click", async function (e) {
     // console.log(confirm);
     if (!confirm.isConfirmed) return;
 
+    // 移除狀態
     dom.connectWrap.classList.remove("connected");
+    dom.connectMode.classList.remove("active");
+    // 清空輸入框
     dom.apiUrl.value = "";
     // 解除鎖定
     dom.apiUrl.disabled = false;
@@ -109,52 +144,52 @@ dom.disconnectBtn.addEventListener("click", async function (e) {
     });
 });
 
-dom.getBtn.addEventListener("click", async function (e) {
-    // 終止事件原本的行為
-    e.preventDefault();
+// dom.getBtn.addEventListener("click", async function (e) {
+//     // 終止事件原本的行為
+//     e.preventDefault();
 
-    let tbody = "";
-    dom.responseTable.querySelector("tbody").innerHTML = tbody;
+//     let tbody = "";
+//     dom.responseTable.querySelector("tbody").innerHTML = tbody;
 
-    if (!api) {
-        Swal.fire({
-            title: "未連線",
-            html: "請先建立連線",
-            icon: "error",
-            confirmButtonText: "確認",
-        });
-        return;
-    }
+//     if (!api) {
+//         Swal.fire({
+//             title: "未連線",
+//             html: "請先建立連線",
+//             icon: "error",
+//             confirmButtonText: "確認",
+//         });
+//         return;
+//     }
 
-    let uid = dom.getUid.value;
-    // console.log("getBtn", uid);
+//     let uid = dom.getUid.value;
+//     // console.log("getBtn", uid);
 
-    if (!uid) {
-        Swal.fire({
-            title: "取得資料失敗",
-            html: "請輸入 UID",
-            icon: "error",
-            confirmButtonText: "確認",
-        });
-        return;
-    }
+//     if (!uid) {
+//         Swal.fire({
+//             title: "取得資料失敗",
+//             html: "請輸入 UID",
+//             icon: "error",
+//             confirmButtonText: "確認",
+//         });
+//         return;
+//     }
 
-    // 發送資料到 API
-    let response = await api.get({ uid });
-    console.log("response", response);
-    if (response.code === 200) {
-        for (let field in response.data) {
-            let value = response.data[field];
-            // console.log(value);
-            tbody += `<tr>
-                <td>${field}</td>
-                <td>${value}</td>
-            </tr>
-            `;
-        }
-        dom.responseTable.querySelector("tbody").innerHTML = tbody;
-    }
-});
+//     // 發送資料到 API
+//     let response = await api.get({ uid });
+//     console.log("response", response);
+//     if (response.code === 200) {
+//         for (let field in response.data) {
+//             let value = response.data[field];
+//             // console.log(value);
+//             tbody += `<tr>
+//                 <td>${field}</td>
+//                 <td>${value}</td>
+//             </tr>
+//             `;
+//         }
+//         dom.responseTable.querySelector("tbody").innerHTML = tbody;
+//     }
+// });
 
 // "1757170187_380"
 dom.sendBtn.addEventListener("click", async function (e) {

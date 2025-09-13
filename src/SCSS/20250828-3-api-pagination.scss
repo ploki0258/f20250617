@@ -216,3 +216,52 @@
         }
     }
 }
+
+#connect-mode {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.tab {
+    display: flex;
+    gap: 10px;
+    margin: 10px auto;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+
+    > a {
+        padding: 5px 15px;
+        border: none;
+        border-bottom: none;
+        border-radius: 10px 10px 0 0;
+        color: #303030;
+        text-decoration: none;
+        font-weight: 500;
+        background-color: #f0f0f0;
+
+        &:hover {
+            background-color: #4f55ff;
+            color: #fff;
+        }
+
+        &.active {
+            background-color: #2d34fa;
+            color: #fff;
+
+            &:hover {
+                background-color: #3c41c4;
+            }
+        }
+    }
+}
+
+.tab-content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}

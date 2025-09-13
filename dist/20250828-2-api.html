@@ -11,12 +11,86 @@
 <body>
     <div class="container">
         <h1 class="title">API 連線測試</h1>
-        <div class="input-group">
-            <label for="api-url">API URL：</label>
-            <input type="text" id="api-url" />
+        <h2 class="title">建立連線</h2>
+        <div class="connect-wrap" id="connect-wrap">
+            <div class="input-group">
+                <div class="input-wrap">
+                    <label for="api-url">API URL：</label>
+                    <span class="status"></span>
+                </div>
+                <input type="text" id="api-url" />
+            </div>
+            <div class="fn">
+                <button class="btn" id="connect-btn">連線</button>
+                <button class="btn danger" id="disconnect-btn">斷線</button>
+            </div>
         </div>
-        <div class="fn">
-            <button class="btn" id="connect-btn">連線</button>
+
+        <h2 class="title">取得資料</h2>
+        <div class="get-wrap">
+            <div>
+                <h3 class="title">接收資料</h3>
+                <div class="input-group">
+                    <label for="get-uid">UID：</label>
+                    <input type="text" id="get-uid"></input>
+                </div>
+                <div class="fn">
+                    <button class="btn" id="get-btn">取得資料</button>
+                </div>
+                <table class="table" id="response-table">
+                    <thead>
+                        <tr>
+                            <th>欄位</th>
+                            <th>值</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div>
+                <h3 class="title">發送資料</h3>
+                <div class="input-group">
+                    <label for="user-name">名稱：</label>
+                    <input type="text" id="user-name"></input>
+                </div>
+                <div class="input-group">
+                    <label for="user-age">年齡：</label>
+                    <input type="text" id="user-age"></input>
+                </div>
+                <div class="fn">
+                    <button class="btn" id="send-btn">發送資料</button>
+                </div>
+            </div>
+        </div>
+        <div class="data-list-wrap" id="data-list-wrap">
+            <h2 class="title" id="data-list-title">資料列表</h2>
+            <h2 class="title" id="data-editor">編輯資料</h2>
+            <table class="table" id="data-list">
+                <thead>
+                    <tr>
+                        <th>功能</th>
+                        <th>UID</th>
+                        <th>名稱</th>
+                        <th>年齡</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="editor-wrap" id="editor-wrap">
+                <input type="hidden" id="editor-uid" />
+                <div class="input-group">
+                    <label for="edit-name">名稱：</label>
+                    <input type="text" id="edit-name"></input>
+                </div>
+                <div class="input-group">
+                    <label for="edit-age">年齡：</label>
+                    <input type="text" id="edit-age"></input>
+                </div>
+                <div class="fn">
+                    <button class="btn" id="update-btn">更新資料</button>
+                    <button class="btn cancel-btn" id="cancel-btn">取消</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
