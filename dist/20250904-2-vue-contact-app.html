@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact App</title>
+    <link rel="stylesheet" href="./css/20250904-2-vue-contact-app.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <h1 class="title">Content App</h1>
+            <div class="two">
+                <div class="col">
+                    <h2 class="title">輸入</h2>
+                    <form action="">
+                        <div class="input-group">
+                            <label for="name">姓名</label>
+                            <input type="text" placeholder="請輸入姓名" v-model="form.name" ref="name" />
+                        </div>
+                        <div class="input-group">
+                            <label for="email">信箱</label>
+                            <input type="text" placeholder="請輸入信箱" v-model="form.email" ref="email" />
+                        </div>
+                        <div class="input-group">
+                            <label for="phone">電話</label>
+                            <input type="text" placeholder="請輸入電話" v-model="form.phone" ref="phone" />
+                        </div>
+                        <div class="input-group">
+                            <label for="subject">主旨</label>
+                            <input type="text" placeholder="請輸入主指" v-model="form.subject" ref="subject" />
+                        </div>
+                        <div class="input-group">
+                            <label for="message">訊息</label>
+                            <textarea type="text" placeholder="請輸入訊息" v-model="form.message" ref="message"></textarea>
+                        </div>
+                        <div class="fn">
+                            <button class="btn" id="submit" @click.prevent="submit">送出</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col">
+                    <h2 class="title">預覽</h2>
+                    <div class="preview">
+                        <div class="preview-item">
+                            <label for="name">姓名</label>
+                            <span class="value">{{form.name}}</span>
+                        </div>
+                        <div class="preview-item">
+                            <label for="email">信箱</label>
+                            <span class="value">{{form.email}}</span>
+                        </div>
+                        <div class="preview-item">
+                            <label for="phone">電話</label>
+                            <span class="value">{{form.phone}}</span>
+                        </div>
+                        <div class="preview-item">
+                            <label for="subject">主旨</label>
+                            <span class="value">{{form.subject}}</span>
+                        </div>
+                        <div class="preview-item">
+                            <label for="message">訊息</label>
+                            <span class="value">{{form.message}}</span>
+                        </div>
+                        <div class="preview-item">
+                            <label for="message">訊息</label>
+                            <span class="value" v-html="form.message"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/lib/vue.global.prod.js"></script>
+<script type="module" src="js/20250904-2-vue-contact-app.js"></script>
+<!-- <script src="js/20250904-2-vue-contact-app-origin.js"></script> -->
+
+</html>
