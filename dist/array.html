@@ -5,10 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .container>div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .circle {
+            border-radius: 100%;
+            border: 10px solid rgb(255, 0, 0);
+            background-color: transparent;
+        }
+
+        .triangle {
+            width: unset;
+            height: unset;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 50px solid green;
+            transform: rotate(45deg);
+
+        }
+
+        .oval {
+            border-radius: 100% 20% 100% 20%;
+            transform: rotate(135deg);
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class="container">
+        <div class="red circle"></div>
+        <div class="blue rectangle"></div>
+        <div class="green triangle"> </div>
+        <div class="orange oval"></div>
+        <div class="purple lozenge"></div>
+        <div></div>
+    </div>
 </body>
 <script src="./js/array.js"></script>
 
